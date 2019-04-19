@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+using byte = unsigned char;
 using Compare = bool (*) (const void *, const void *);
 using Predicate = bool (*) (const void *);
 using Equal = bool (*) (const void *, const void *);
@@ -26,11 +27,15 @@ namespace graal {
     
     bool none_of (const void *first, const void *last, size_t size, Predicate p);
 
-    void * unique (const void *first, const void *last, size_t size, const void *value, Equal eq);
+    bool equal (const void *first1, const void *last1, const void *first2, size_t size, Equal eq);
+
+    bool equal (const void *first1, const void *last1, const void *first2, const void *last2, size_t size, Equal eq);
+
+    void * unique (const void *first, const void *last, size_t size, Equal eq);
 
     void * partition (const void *first, const void *last, size_t size, Predicate p);
 
-    void sort (void *first, void *last, size_t size, Compare cmp);
+    void qsort (void *first, int distance, size_t size, Compare cmp);
 }
 
 #endif
