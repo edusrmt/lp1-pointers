@@ -2,6 +2,7 @@
 #define GRAAL_H_
 
 #include <iostream>
+#include <utility>
 
 using byte = unsigned char;
 using Compare = bool (*) (const void *, const void *);
@@ -9,7 +10,7 @@ using Predicate = bool (*) (const void *);
 using Equal = bool (*) (const void *, const void *);
 
 namespace graal {
-    const void * min (const void *first, const void *last, size_t size, Compare cmp);
+    const void * min (void *first, void *last, size_t size, Compare cmp);
 
     void reverse (void *first, void *last, size_t size);
 
