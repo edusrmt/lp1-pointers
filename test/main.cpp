@@ -488,19 +488,19 @@ TEST(IntRange, PartitionOneIsTrue)
 			 );
 	ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ) );
 }
-/* SHIT
+
 TEST(IntRange, PartitionNoneIsTrue)
 {
 	int A[]{ 1, 1, 0, 1, 0, 1, 1 };
-	int A_E[]{ NULL };
+	
 
 	int * result;
 	result = static_cast< int * >(
 			 graal::partition( std::begin(A), std::end(A),
 							   sizeof(A[0]), INT_bigg_than )
 			 );
-	ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ) );
-}*/
+	ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A) ) );
+}
 /*}}}*/
 /* IntRange -> sort() tests {{{*/
 TEST(IntRange, BasicSort)
@@ -1023,19 +1023,18 @@ TEST(CharRange, PartitionOneIsTrue)
 			 );
 	ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ) );
 }
-/* SHIT
+
 TEST(CharRange, PartitionNoneIsTrue)
 {
 	char A[]{ 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a' };
-	char A_E[]{NULL};
 
 	char * result;
 	result = static_cast< char * >(
 			 graal::partition( std::begin(A), std::end(A),
 							   sizeof(A[0]), CHAR_bigg_than )
 			 );
-	ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A_E) ) );
-}*/
+	ASSERT_TRUE( std::equal( std::begin(A), result, std::begin(A)) );
+}
 /*}}}*/
 /* CharRange -> sort() tests {{{*/
 TEST(CharRange, BasicSort){
